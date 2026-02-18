@@ -1,68 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💡 Lumina Dash - Gestão Financeira para Devs
 
-## Getting Started
+Um Dashboard SaaS moderno desenvolvido para consolidar conhecimentos na stack mais atual do mercado (Next.js 16+, TypeScript, Tailwind).
 
-First, run the development server:
+## 🚀 Tecnologias e Decisões Técnicas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js 16 (App Router)**: Utilização de *Route Groups* para organização de layouts e *Server Components* para performance.
+- **Middleware/Proxy**: Sistema de autenticação robusto que intercepta requisições no *Edge Runtime*, garantindo que áreas logadas nunca sofram "flash" de conteúdo protegido.
+- **Shadcn/ui & Tailwind CSS**: Interface construída com componentes acessíveis e customizáveis, focada em uma experiência de usuário (UX) limpa e responsiva.
+- **Visualização de Dados**: Gráficos dinâmicos com **Recharts**, adaptando-se automaticamente aos temas Dark e Light.
+- **Biome**: Utilizado como ferramenta única de *linting* e formatação, garantindo um código limpo com performance 25x superior ao ESLint/Prettier tradicional.
+- **Design Responsivo**: Layouts construídos com técnicas de *CSS Intrínseco* (Flexbox e Grid auto-ajustáveis), evitando quebras em diferentes tamanhos de tela.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Funcionalidades
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [x] Autenticação simulada via Cookies e Proxy.
+- [x] Dashboard com métricas financeiras e KPIs de projetos.
+- [x] Gráficos de evolução faturamento mensal.
+- [x] Gestão de projetos com tabelas responsivas e estados (Badges).
+- [x] Alternância de tema (Dark/Light Mode) com persistência.
+- [x] Logout funcional com invalidação de sessão.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
+*Projeto desenvolvido para portfólio técnico - 2026*
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
 
 ```
 lumina-dash
-├─ biome.json
-├─ eslint.config.mjs
-├─ middleware.ts
-├─ next.config.ts
-├─ package-lock.json
-├─ package.json
-├─ postcss.config.mjs
-├─ public
-│  ├─ file.svg
-│  ├─ globe.svg
-│  ├─ next.svg
-│  ├─ vercel.svg
-│  └─ window.svg
-├─ README.md
-├─ src
-│  └─ app
-│     ├─ (auth)
-│     │  └─ login
-│     │     └─ page.tsx
-│     ├─ (dashboard)
-│     │  └─ home
-│     │     └─ page.tsx
-│     ├─ favicon.ico
-│     ├─ globals.css
-│     ├─ layout.tsx
-│     └─ page.tsx
-└─ tsconfig.json
+📦src
+ ┣ 📂app
+ ┃ ┣ 📂(auth)
+ ┃ ┃ ┗ 📂login
+ ┃ ┃ ┃ ┗ 📜page.tsx
+ ┃ ┣ 📂(dashboard)
+ ┃ ┃ ┣ 📂home
+ ┃ ┃ ┃ ┣ 📜loading.tsx
+ ┃ ┃ ┃ ┗ 📜page.tsx
+ ┃ ┃ ┣ 📂projects
+ ┃ ┃ ┃ ┣ 📜loading.tsx
+ ┃ ┃ ┃ ┗ 📜page.tsx
+ ┃ ┃ ┗ 📜layout.tsx
+ ┃ ┣ 📜favicon.ico
+ ┃ ┣ 📜globals.css
+ ┃ ┣ 📜layout.tsx
+ ┃ ┗ 📜pag(inutilizado).tsx
+ ┣ 📂components
+ ┃ ┣ 📂ui
+ ┃ ┃ ┣ 📜badge.tsx
+ ┃ ┃ ┣ 📜button.tsx
+ ┃ ┃ ┣ 📜card.tsx
+ ┃ ┃ ┣ 📜dropdown-menu.tsx
+ ┃ ┃ ┣ 📜input.tsx
+ ┃ ┃ ┣ 📜separator.tsx
+ ┃ ┃ ┣ 📜sheet.tsx
+ ┃ ┃ ┣ 📜sidebar.tsx
+ ┃ ┃ ┣ 📜skeleton.tsx
+ ┃ ┃ ┣ 📜table.tsx
+ ┃ ┃ ┗ 📜tooltip.tsx
+ ┃ ┣ 📜app-sidebar.tsx
+ ┃ ┣ 📜mode-toggle.tsx
+ ┃ ┣ 📜recent-projects.tsx
+ ┃ ┣ 📜revenue-chart.tsx
+ ┃ ┗ 📜theme-provider.tsx
+ ┣ 📂hooks
+ ┃ ┗ 📜use-mobile.ts
+ ┣ 📂lib
+ ┃ ┗ 📜utils.ts
+ ┗ 📜proxy.ts
 
 ```

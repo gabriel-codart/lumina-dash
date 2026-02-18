@@ -37,10 +37,22 @@ export default function LoginPage() {
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="space-y-2">
-              <Input id="email" type="email" placeholder="nome@exemplo.com" required />
+              <Input
+                id="email"
+                type="email"
+                defaultValue="test@mail.com"
+                placeholder="nome@exemplo.com"
+                required
+              />
             </div>
             <div className="space-y-2">
-              <Input id="password" type="password" placeholder="Sua senha" required />
+              <Input
+                id="password"
+                type="password"
+                defaultValue="12345"
+                placeholder="Sua senha"
+                required
+              />
             </div>
             <Button className="w-full" type="submit" disabled={loading}>
               {loading ? "Entrando..." : "Acessar Sistema"}

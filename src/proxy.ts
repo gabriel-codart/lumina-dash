@@ -23,5 +23,5 @@ export function proxy(request: NextRequest) {
 // Configura em quais rotas o proxy deve agir
 export const config = {
   // Isso vai capturar a raiz (/) e a rota /home
-  matcher: ['/', '/home/:path*'],
+  matcher: ['/', '/home/:path*', '/projects/:path*'],
 };
